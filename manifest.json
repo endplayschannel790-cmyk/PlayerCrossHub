@@ -1,8 +1,8 @@
 
 {
-  "name": "PlayHub",
-  "short_name": "PlayHub",
-  "description": "PlayHub — PlayVerse Community",
+  "name": "PlayerCrossHub",
+  "short_name": "PlayerCrossHub",
+  "description": "PlayerCrossHub — Gaming Community",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
