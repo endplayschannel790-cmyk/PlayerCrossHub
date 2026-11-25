@@ -1,5 +1,6 @@
 
-const CACHE_NAME = "playhub-v1";
+const CACHE_NAME = "playercrosshub-v1";
+
 const APP_FILES = [
   "./",
   "./index.html",
@@ -22,7 +23,10 @@ self.addEventListener("activate", (event) => {
     caches.keys().then((keys) =>
       Promise.all(
         keys
-          .filter((key) => key.startsWith("playhub-") && key !== CACHE_NAME)
+          .filter((key) =>
+            key.startsWith("playhub-") ||
+            (key.startsWith("playercrosshub-") && key !== CACHE_NAME)
+          )
           .map((key) => caches.delete(key))
       )
     )
