@@ -1,18 +1,92 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-  
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#8b45ff">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="PlayHub">
+<meta name="apple-mobile-web-app-title" content="PlayerCrossHub">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PlayerCrossHub — Community Chat</title>
 
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PlayVerse Community — Chat</title>
 <style>
 :root{--bg:#080a18;--panel:#11152a;--panel2:#171b35;--line:#292e55;--text:#f4f5ff;--muted:#a5add3;--purple:#8b45ff;--blue:#19baff;--pink:#d84dff;--green:#56e6b1}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 70% -10%,#22205d 0,transparent 42%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer;color:inherit}.app{display:grid;grid-template-columns:235px minmax(0,1fr);min-height:100vh}.sidebar{border-right:1px solid var(--line);padding:22px 15px;background:#090b1b;position:sticky;top:0;height:100vh}.brand{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:850;letter-spacing:-.5px;margin:0 8px 32px}.logo{display:grid;place-items:center;width:39px;height:39px;border-radius:13px;background:linear-gradient(140deg,var(--purple),var(--blue));font-weight:1000;font-size:24px;box-shadow:0 0 22px #713bff55}.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;color:var(--muted);padding:12px 13px;border-radius:12px;text-align:left;display:flex;gap:12px;align-items:center}.nav button.active,.nav button:hover{background:linear-gradient(90deg,#4520a6,#1b1f52);color:white}.nav .ico{width:22px;text-align:center;font-size:18px}.sidebar-bottom{position:absolute;bottom:18px;left:15px;right:15px;padding:14px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(135deg,#171538,#10162d)}.sidebar-bottom strong{display:block}.sidebar-bottom small{color:var(--muted)}main{min-width:0}.topbar{height:75px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;padding:0 27px;position:sticky;top:0;background:#090b1beF;backdrop-filter:blur(14px);z-index:4}.search{flex:1;max-width:720px;position:relative}.search input{width:100%;background:#101329;border:1px solid var(--line);border-radius:13px;padding:12px 15px 12px 42px;color:white;outline:none}.search:before{content:'⌕';position:absolute;left:15px;top:4px;font-size:27px;color:#aab2e8}.avatar{border-radius:12px;background:linear-gradient(135deg,#283a91,#0bb8e7);width:39px;height:39px;display:grid;place-items:center;font-size:21px}.profile{display:flex;align-items:center;gap:10px;font-weight:700}.content{max-width:1400px;margin:auto;padding:26px}.hero{border:1px solid #36316e;border-radius:23px;overflow:hidden;padding:34px;position:relative;background:radial-gradient(circle at 82% 30%,#4c1e9b 0,transparent 28%),linear-gradient(120deg,#19134b,#10224c 60%,#10162e);min-height:220px}.hero:after{content:'✦';position:absolute;right:9%;top:-40px;font-size:230px;color:#7d55ff22;pointer-events:none}.eyebrow{color:#a8a1ff;text-transform:uppercase;font-size:12px;letter-spacing:2px;font-weight:800}.hero h1{font-size:clamp(30px,4vw,47px);line-height:1.1;margin:9px 0 12px;letter-spacing:-1px}.hero p{max-width:590px;color:#c5c9ed;font-size:16px;margin:0 0 22px}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{border:1px solid var(--line);border-radius:11px;padding:10px 15px;background:#191d39}.btn.primary{background:linear-gradient(100deg,#7c35f5,#4d62ff);border-color:transparent;font-weight:750;box-shadow:0 6px 22px #6736e944}.btn:hover{filter:brightness(1.15)}.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:25px;color:#c7cbee}.stats b{color:white}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:27px 0 14px}.section-head h2{margin:0;font-size:21px}.section-head p{margin:3px 0 0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{border:1px solid var(--line);border-radius:17px;padding:18px;background:linear-gradient(145deg,#141832,#0f1227);min-width:0}.club-top{display:flex;align-items:center;gap:12px}.club-icon{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;font-size:27px;background:linear-gradient(140deg,#4922a6,#087fae);border:1px solid #6153be}.club-icon.green{background:linear-gradient(140deg,#126e62,#203c67)}.club-icon.orange{background:linear-gradient(140deg,#8a3e2a,#4d287e)}.card h3{margin:0;font-size:17px}.muted{color:var(--muted)}.tag{display:inline-block;border:1px solid #3d3a77;background:#201b48;color:#c5b6ff;border-radius:7px;padding:3px 7px;font-size:11px;margin-top:5px}.card p{color:#b8bfdf;margin:13px 0}.card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #272b4b;padding-top:13px;margin-top:14px;color:var(--muted);font-size:13px}.row{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(240px,1fr);gap:16px}.post{display:flex;gap:12px;padding:15px 0;border-bottom:1px solid #272b4b}.post:last-child{border-bottom:0}.post-body{min-width:0;flex:1}.post-body p{margin:6px 0;color:#d2d5ef;overflow-wrap:anywhere}.post-meta{display:flex;gap:9px;align-items:center;font-size:13px}.post-actions{display:flex;gap:14px;color:var(--muted);font-size:13px}.composer textarea{width:100%;min-height:85px;resize:vertical;background:#0b0e20;color:white;border:1px solid var(--line);border-radius:12px;padding:12px;outline:none}.composer .compose-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px}.event-date{width:55px;flex-shrink:0;border-radius:12px;background:#2b1a66;color:#cdbbff;text-align:center;padding:8px;font-weight:850}.event{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #272b4b}.event:last-child{border-bottom:0}.event strong{display:block}.event small{color:var(--muted)}.online-dot{display:inline-block;width:8px;height:8px;background:var(--green);border-radius:50%;margin-right:6px}.members{display:flex;align-items:center;gap:9px;padding:10px 0;border-bottom:1px solid #252a49}.members:last-child{border:0}.members .avatar{width:35px;height:35px;font-size:17px}.members .muted{font-size:12px}.page{display:none}.page.active{display:block}.empty{text-align:center;padding:40px 15px;color:var(--muted)}.field{width:100%;background:#0b0e20;border:1px solid var(--line);border-radius:10px;color:white;padding:11px;margin:6px 0 12px}.label{display:block;color:#c8cbed;font-size:13px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#25214d;border:1px solid #6c51c9;padding:12px 18px;border-radius:12px;display:none;z-index:10;box-shadow:0 10px 35px #0008}.footer{color:#737ca8;font-size:12px;text-align:center;padding:30px 0 10px}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 70% -10%,#22205d 0,transparent 42%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer;color:inherit}
+.app{display:grid;grid-template-columns:235px minmax(0,1fr);min-height:100vh}
+.sidebar{border-right:1px solid var(--line);padding:22px 15px;background:#090b1b;position:sticky;top:0;height:100vh}
+.brand{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:850;letter-spacing:-.5px;margin:0 8px 32px}
+.logo{display:grid;place-items:center;width:39px;height:39px;border-radius:13px;background:linear-gradient(140deg,var(--purple),var(--blue));font-weight:1000;font-size:24px;box-shadow:0 0 22px #713bff55}
+.nav{display:grid;gap:7px}
+.nav button{border:0;background:transparent;color:var(--muted);padding:12px 13px;border-radius:12px;text-align:left;display:flex;gap:12px;align-items:center}
+.nav button.active,.nav button:hover{background:linear-gradient(90deg,#4520a6,#1b1f52);color:white}
+.nav .ico{width:22px;text-align:center;font-size:18px}
+.sidebar-bottom{position:absolute;bottom:18px;left:15px;right:15px;padding:14px;border:1px solid var(--line);border-radius:15px;background:linear-gradient(135deg,#171538,#10162d)}
+.sidebar-bottom strong{display:block}
+.sidebar-bottom small{color:var(--muted)}
+main{min-width:0}
+.topbar{height:75px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;padding:0 27px;position:sticky;top:0;background:#090b1beF;backdrop-filter:blur(14px);z-index:4}
+.search{flex:1;max-width:720px;position:relative}
+.search input{width:100%;background:#101329;border:1px solid var(--line);border-radius:13px;padding:12px 15px 12px 42px;color:white;outline:none}
+.search:before{content:'⌕';position:absolute;left:15px;top:4px;font-size:27px;color:#aab2e8}
+.avatar{border-radius:12px;background:linear-gradient(135deg,#283a91,#0bb8e7);width:39px;height:39px;display:grid;place-items:center;font-size:21px}
+.profile{display:flex;align-items:center;gap:10px;font-weight:700}
+.content{max-width:1400px;margin:auto;padding:26px}
+.hero{border:1px solid #36316e;border-radius:23px;overflow:hidden;padding:34px;position:relative;background:radial-gradient(circle at 82% 30%,#4c1e9b 0,transparent 28%),linear-gradient(120deg,#19134b,#10224c 60%,#10162e);min-height:220px}
+.hero:after{content:'✦';position:absolute;right:9%;top:-40px;font-size:230px;color:#7d55ff22;pointer-events:none}
+.eyebrow{color:#a8a1ff;text-transform:uppercase;font-size:12px;letter-spacing:2px;font-weight:800}
+.hero h1{font-size:clamp(30px,4vw,47px);line-height:1.1;margin:9px 0 12px;letter-spacing:-1px}
+.hero p{max-width:590px;color:#c5c9ed;font-size:16px;margin:0 0 22px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);border-radius:11px;padding:10px 15px;background:#191d39}
+.btn.primary{background:linear-gradient(100deg,#7c35f5,#4d62ff);border-color:transparent;font-weight:750;box-shadow:0 6px 22px #6736e944}
+.btn:hover{filter:brightness(1.15)}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:25px;color:#c7cbee}
+.stats b{color:white}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:27px 0 14px}
+.section-head h2{margin:0;font-size:21px}
+.section-head p{margin:3px 0 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{border:1px solid var(--line);border-radius:17px;padding:18px;background:linear-gradient(145deg,#141832,#0f1227);min-width:0}
+.club-top{display:flex;align-items:center;gap:12px}
+.club-icon{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;font-size:27px;background:linear-gradient(140deg,#4922a6,#087fae);border:1px solid #6153be}
+.club-icon.green{background:linear-gradient(140deg,#126e62,#203c67)}
+.club-icon.orange{background:linear-gradient(140deg,#8a3e2a,#4d287e)}
+.card h3{margin:0;font-size:17px}
+.muted{color:var(--muted)}
+.tag{display:inline-block;border:1px solid #3d3a77;background:#201b48;color:#c5b6ff;border-radius:7px;padding:3px 7px;font-size:11px;margin-top:5px}
+.card p{color:#b8bfdf;margin:13px 0}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid #272b4b;padding-top:13px;margin-top:14px;color:var(--muted);font-size:13px}
+.row{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(240px,1fr);gap:16px}
+.post{display:flex;gap:12px;padding:15px 0;border-bottom:1px solid #272b4b}
+.post:last-child{border-bottom:0}
+.post-body{min-width:0;flex:1}
+.post-body p{margin:6px 0;color:#d2d5ef;overflow-wrap:anywhere}
+.post-meta{display:flex;gap:9px;align-items:center;font-size:13px}
+.post-actions{display:flex;gap:14px;color:var(--muted);font-size:13px}
+.composer textarea{width:100%;min-height:85px;resize:vertical;background:#0b0e20;color:white;border:1px solid var(--line);border-radius:12px;padding:12px;outline:none}
+.composer .compose-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px}
+.event-date{width:55px;flex-shrink:0;border-radius:12px;background:#2b1a66;color:#cdbbff;text-align:center;padding:8px;font-weight:850}
+.event{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #272b4b}
+.event:last-child{border-bottom:0}
+.event strong{display:block}
+.event small{color:var(--muted)}
+.online-dot{display:inline-block;width:8px;height:8px;background:var(--green);border-radius:50%;margin-right:6px}
+.members{display:flex;align-items:center;gap:9px;padding:10px 0;border-bottom:1px solid #252a49}
+.members:last-child{border:0}
+.members .avatar{width:35px;height:35px;font-size:17px}
+.members .muted{font-size:12px}
+.page{display:none}
+.page.active{display:block}
+.empty{text-align:center;padding:40px 15px;color:var(--muted)}
+.field{width:100%;background:#0b0e20;border:1px solid var(--line);border-radius:10px;color:white;padding:11px;margin:6px 0 12px}
+.label{display:block;color:#c8cbed;font-size:13px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#25214d;border:1px solid #6c51c9;padding:12px 18px;border-radius:12px;display:none;z-index:10;box-shadow:0 10px 35px #0008}
+.footer{color:#737ca8;font-size:12px;text-align:center;padding:30px 0 10px}
 .chat-layout{display:grid;grid-template-columns:205px minmax(0,1fr);gap:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#0d1023;min-height:520px}
 .channel-rail{background:#0a0d1d;border-right:1px solid var(--line);padding:16px 10px;min-width:0}
 .server-title{font-weight:850;padding:10px;border-bottom:1px solid var(--line);margin-bottom:14px}
@@ -34,7 +108,6 @@
 .online-pill{background:#151a31;border:1px solid var(--line);border-radius:20px;padding:5px 9px;font-size:12px;color:#c7ccef}
 .chat-note{color:#8992ba;font-size:12px;padding:0 17px 12px}
 @media(max-width:700px){.chat-layout{grid-template-columns:130px minmax(0,1fr)}.channel-rail{padding:10px 6px}.channel-btn{font-size:12px;padding:8px 6px}.chat-messages{padding:10px}.chat-compose{padding:8px}.chat-compose button{padding:7px 9px}.chat-head{padding:12px;font-size:14px}}
-
 @media(max-width:950px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.row{grid-template-columns:1fr}.sidebar{width:78px;padding:17px 9px}.app{grid-template-columns:78px minmax(0,1fr)}.brand{margin:0 10px 28px}.brand span:last-child,.nav .nav-label,.sidebar-bottom{display:none}.nav button{justify-content:center;padding:13px 6px}.nav .ico{font-size:21px}.topbar{padding:0 15px}.content{padding:18px}}
 @media(max-width:580px){.grid{grid-template-columns:1fr}.content{padding:12px}.hero{padding:23px 20px}.hero:after{right:-20px;font-size:150px}.topbar{height:65px}.profile span{display:none}.stats{gap:12px;font-size:13px}.section-head{align-items:flex-start}.section-head h2{font-size:19px}.app{grid-template-columns:62px minmax(0,1fr)}.sidebar{width:62px;padding:14px 6px}.brand{margin:0 5px 25px}.logo{width:36px;height:36px}.nav button{padding:12px 2px}.hero p{font-size:14px}}
 </style>
@@ -42,36 +115,72 @@
 <body>
 <div class="app">
 <aside class="sidebar">
-  <div class="brand"><div class="logo">P</div><span>PlayVerse</span></div>
-  <nav class="nav" id="nav">
-    <button class="active" data-page="home"><span class="ico">⌂</span><span class="nav-label">Home</span></button>
-    <button data-page="discover"><span class="ico">⌕</span><span class="nav-label">Discover</span></button>
-    <button data-page="clubs"><span class="ico">♧</span><span class="nav-label">Clubs</span></button>
-    <button data-page="wall"><span class="ico">▤</span><span class="nav-label">Community Wall</span></button>
-    <button data-page="chat"><span class="ico">#</span><span class="nav-label">Community Chat</span></button>
-    <button data-page="events"><span class="ico">▦</span><span class="nav-label">Events</span></button>
-    <button data-page="members"><span class="ico">♙</span><span class="nav-label">Members</span></button>
-    <button data-page="profile"><span class="ico">◉</span><span class="nav-label">My Profile</span></button>
-  </nav>
-  <div class="sidebar-bottom"><strong>Play more. Connect more.</strong><small>Your community, your universe.</small></div>
+<div class="brand"><div class="logo">P</div><span>PlayerCrossHub</span></div>
+<nav class="nav" id="nav">
+<button class="active" data-page="home"><span class="ico">⌂</span><span class="nav-label">Home</span></button>
+<button data-page="discover"><span class="ico">⌕</span><span class="nav-label">Discover</span></button>
+<button data-page="clubs"><span class="ico">♧</span><span class="nav-label">Clubs</span></button>
+<button data-page="wall"><span class="ico">▤</span><span class="nav-label">Community Wall</span></button>
+<button data-page="chat"><span class="ico">#</span><span class="nav-label">Community Chat</span></button>
+<button data-page="events"><span class="ico">▦</span><span class="nav-label">Events</span></button>
+<button data-page="members"><span class="ico">♙</span><span class="nav-label">Members</span></button>
+<button data-page="profile"><span class="ico">◉</span><span class="nav-label">My Profile</span></button>
+</nav>
+<div class="sidebar-bottom"><strong>Play more. Connect more.</strong><small>Your community, your universe.</small></div>
 </aside>
 <main>
 <header class="topbar">
-  <div class="search"><input id="search" placeholder="Search clubs, players, posts..." aria-label="Search community"></div>
-  <div class="profile"><div class="avatar" id="topAvatar">🟦</div><span id="topName">Player</span></div>
+<div class="search"><input id="search" placeholder="Search clubs, players, posts..." aria-label="Search community"></div>
+<div class="profile"><div class="avatar" id="topAvatar">🟦</div><span id="topName">Player</span></div>
 </header>
 <div class="content">
+
 <section class="page active" id="page-home">
-  <div class="hero"><div class="eyebrow">The official community hub</div><h1>Welcome to<br>PlayVerse Community</h1><p>Meet players, discover clubs, share what you're building, and find your next game. This is where the PlayVerse community comes together.</p><div class="actions"><button class="btn primary" data-go="clubs">Explore clubs →</button><button class="btn" data-go="wall">Visit community wall</button></div><div class="stats"><span>✦ <b id="clubCount">3</b> clubs</span><span>▣ <b id="postCount">0</b> community posts</span><span>◉ Made for players</span></div></div>
-  <div class="section-head"><div><h2>Featured clubs</h2><p>Find your people.</p></div><button class="btn" data-go="clubs">All clubs →</button></div><div class="grid" id="featuredClubs"></div>
-  <div class="section-head"><div><h2>Community wall</h2><p>What's happening around PlayVerse.</p></div><button class="btn" data-go="wall">See all →</button></div><div class="card" id="homePosts"></div>
+<div class="hero">
+<div class="eyebrow">The official community hub</div>
+<h1>Welcome to<br>PlayerCrossHub</h1>
+<p>Meet players, discover clubs, share what you're building, and find your next game. This is where the PlayerCrossHub community comes together.</p>
+<div class="actions"><button class="btn primary" data-go="clubs">Explore clubs →</button><button class="btn" data-go="wall">Visit community wall</button></div>
+<div class="stats"><span>✦ <b id="clubCount">3</b> clubs</span><span>▣ <b id="postCount">0</b> community posts</span><span>◉ Made for players</span></div>
+</div>
+<div class="section-head"><div><h2>Featured clubs</h2><p>Find your people.</p></div><button class="btn" data-go="clubs">All clubs →</button></div>
+<div class="grid" id="featuredClubs"></div>
+<div class="section-head"><div><h2>Community wall</h2><p>What's happening around PlayerCrossHub.</p></div><button class="btn" data-go="wall">See all →</button></div>
+<div class="card" id="homePosts"></div>
 </section>
-<section class="page" id="page-discover"><div class="section-head"><div><h2>Discover</h2><p>Explore communities and posts.</p></div></div><div class="hero" style="min-height:0;margin-bottom:18px"><div class="eyebrow">Find your next squad</div><h1 style="font-size:32px">There's a place for you.</h1><p>Search by club name, game, or interest using the search bar above.</p></div><div class="grid" id="discoverClubs"></div><div class="section-head"><h2>Latest posts</h2></div><div class="card" id="discoverPosts"></div></section>
-<section class="page" id="page-clubs"><div class="section-head"><div><h2>Clubs</h2><p>Join a community or create your own.</p></div><button class="btn primary" id="createClubBtn">＋ Create club</button></div><div class="grid" id="allClubs"></div><div class="card" id="clubForm" style="display:none;margin-top:18px"><h3>Create a club</h3><p class="muted">Make a local demo club. It will be saved in this browser.</p><label class="label">Club name</label><input class="field" id="clubName" maxlength="36" placeholder="e.g. Survival Builders"><label class="label">Game or topic</label><input class="field" id="clubTopic" maxlength="40" placeholder="e.g. PlayBlocks, Roblox, building"><label class="label">Description</label><textarea class="field" id="clubDescription" maxlength="220" placeholder="What is your club about?"></textarea><label class="label">Icon emoji</label><input class="field" id="clubEmoji" maxlength="4" value="🎮"><div class="actions"><button class="btn primary" id="saveClub">Create club</button><button class="btn" id="cancelClub">Cancel</button></div></div></section>
-<section class="page" id="page-wall"><div class="section-head"><div><h2>Community Wall</h2><p>Share ideas, updates, and friendly messages.</p></div></div><div class="card composer"><textarea id="postText" maxlength="500" placeholder="What's happening in your gaming world?"></textarea><div class="compose-bottom"><span class="muted" id="charCount">0 / 500</span><button class="btn primary" id="publishPost">Publish post</button></div></div><div class="section-head"><h2>Latest posts</h2></div><div class="card" id="allPosts"></div></section>
-<section class="page" id="page-chat"><div class="section-head"><div><h2>Community Chat</h2><p>Discord-inspired channels for the PlayVerse community.</p></div></div>
+
+<section class="page" id="page-discover">
+<div class="section-head"><div><h2>Discover</h2><p>Explore communities and posts.</p></div></div>
+<div class="hero" style="min-height:0;margin-bottom:18px"><div class="eyebrow">Find your next squad</div><h1 style="font-size:32px">There's a place for you.</h1><p>Search by club name, game, or interest using the search bar above.</p></div>
+<div class="grid" id="discoverClubs"></div>
+<div class="section-head"><h2>Latest posts</h2></div>
+<div class="card" id="discoverPosts"></div>
+</section>
+
+<section class="page" id="page-clubs">
+<div class="section-head"><div><h2>Clubs</h2><p>Join a community or create your own.</p></div><button class="btn primary" id="createClubBtn">＋ Create club</button></div>
+<div class="grid" id="allClubs"></div>
+<div class="card" id="clubForm" style="display:none;margin-top:18px">
+<h3>Create a club</h3><p class="muted">Make a local demo club. It will be saved in this browser.</p>
+<label class="label">Club name</label><input class="field" id="clubName" maxlength="36" placeholder="e.g. Survival Builders">
+<label class="label">Game or topic</label><input class="field" id="clubTopic" maxlength="40" placeholder="e.g. PlayBlocks, Roblox, building">
+<label class="label">Description</label><textarea class="field" id="clubDescription" maxlength="220" placeholder="What is your club about?"></textarea>
+<label class="label">Icon emoji</label><input class="field" id="clubEmoji" maxlength="4" value="🎮">
+<div class="actions"><button class="btn primary" id="saveClub">Create club</button><button class="btn" id="cancelClub">Cancel</button></div>
+</div>
+</section>
+
+<section class="page" id="page-wall">
+<div class="section-head"><div><h2>Community Wall</h2><p>Share ideas, updates, and friendly messages.</p></div></div>
+<div class="card composer"><textarea id="postText" maxlength="500" placeholder="What's happening in your gaming world?"></textarea><div class="compose-bottom"><span class="muted" id="charCount">0 / 500</span><button class="btn primary" id="publishPost">Publish post</button></div></div>
+<div class="section-head"><h2>Latest posts</h2></div><div class="card" id="allPosts"></div>
+</section>
+
+<section class="page" id="page-chat">
+<div class="section-head"><div><h2>Community Chat</h2><p>Discord-inspired channels for the PlayerCrossHub community.</p></div></div>
 <div class="chat-layout">
-<aside class="channel-rail"><div class="server-title">🌌 PlayVerse Hub <span style="float:right;color:#8c94bf">⌄</span></div>
+<aside class="channel-rail">
+<div class="server-title">🌌 PlayerCrossHub <span style="float:right;color:#8c94bf">⌄</span></div>
 <div class="channel-label">INFORMATION</div>
 <button class="channel-btn selected" data-channel="welcome">✦・welcome</button>
 <button class="channel-btn" data-channel="announcements">📣・announcements</button>
@@ -83,79 +192,278 @@
 <div class="channel-label">VOICE CHANNELS</div>
 <button class="channel-btn" data-voice="Hangout">🔊・Hangout</button>
 <button class="channel-btn" data-voice="Gaming squad">🔊・Gaming squad</button>
-<div class="channel-label">YOUR DEMO PROFILE</div><div style="padding:8px;color:#aeb6dc;font-size:12px" id="chatSelf">🟦 Player</div></aside>
-<div class="chat-main"><div class="chat-head"><b id="chatChannelTitle">✦・welcome</b><span id="chatChannelDesc">Start here and meet the community</span></div>
+<div class="channel-label">YOUR DEMO PROFILE</div>
+<div style="padding:8px;color:#aeb6dc;font-size:12px" id="chatSelf">🟦 Player</div>
+</aside>
+<div class="chat-main">
+<div class="chat-head"><b id="chatChannelTitle">✦・welcome</b><span id="chatChannelDesc">Start here and meet the community</span></div>
 <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
 <div class="chat-note">This is a local demo chat. Messages are only saved in this browser.</div>
-<div class="chat-compose"><div class="chat-compose-inner"><input id="chatInput" maxlength="400" placeholder="Message #welcome" aria-label="Chat message"><button id="sendChat">Send ➤</button></div></div></div></div>
-<div class="section-head"><div><h2>People around the hub</h2><p>Example online statuses for the prototype.</p></div></div><div class="online-list"><span class="online-pill">🟢 ${'Player'}</span><span class="online-pill">🟢 PixelPilot · demo</span><span class="online-pill">🟡 BuilderNova · demo</span><span class="online-pill">⚫ StarRunner · demo</span></div>
-<p class="muted" style="font-size:12px;margin-top:15px">Voice channels are visual placeholders; voice chat is not connected. Real-time shared chat, accounts, permissions, and moderation require a backend.</p></section>
-<section class="page" id="page-events"><div class="section-head"><div><h2>Community events</h2><p>Ideas for bringing players together.</p></div></div><div class="grid">
+<div class="chat-compose"><div class="chat-compose-inner"><input id="chatInput" maxlength="400" placeholder="Message #welcome" aria-label="Chat message"><button id="sendChat">Send ➤</button></div></div>
+</div>
+</div>
+<div class="section-head"><div><h2>People around the hub</h2><p>Example online statuses for the prototype.</p></div></div>
+<div class="online-list"><span class="online-pill">🟢 Player</span><span class="online-pill">🟢 PixelPilot · demo</span><span class="online-pill">🟡 BuilderNova · demo</span><span class="online-pill">⚫ StarRunner · demo</span></div>
+<p class="muted" style="font-size:12px;margin-top:15px">Voice channels are visual placeholders; voice chat is not connected. Real-time shared chat, accounts, permissions, and moderation require a backend.</p>
+</section>
+
+<section class="page" id="page-events">
+<div class="section-head"><div><h2>Community events</h2><p>Ideas for bringing players together.</p></div></div>
+<div class="grid">
 <div class="card"><div class="club-top"><div class="club-icon">⚔️</div><div><h3>Community PvP Night</h3><span class="tag">COMMUNITY IDEA</span></div></div><p>Gather your friends for friendly battles and see who comes out on top.</p><div class="card-foot"><span>🎮 PlayBlocks / PvP</span><button class="btn" data-rsvp="PvP Night">I'm interested</button></div></div>
 <div class="card"><div class="club-top"><div class="club-icon green">🏗️</div><div><h3>Build Showcase</h3><span class="tag">COMMUNITY IDEA</span></div></div><p>Show off your best builds, worlds, and creative projects.</p><div class="card-foot"><span>🧱 Creative</span><button class="btn" data-rsvp="Build Showcase">I'm interested</button></div></div>
 <div class="card"><div class="club-top"><div class="club-icon orange">🎥</div><div><h3>Creator Meetup</h3><span class="tag">COMMUNITY IDEA</span></div></div><p>Share video ideas, thumbnails, and tips with other creators.</p><div class="card-foot"><span>✨ Creators</span><button class="btn" data-rsvp="Creator Meetup">I'm interested</button></div></div>
-</div><p class="muted" style="margin-top:16px">These are example event ideas, not scheduled live events.</p></section>
-<section class="page" id="page-members"><div class="section-head"><div><h2>Community members</h2><p>Meet players in this demo community.</p></div></div><div class="card" id="memberList"></div><p class="muted">Demo profiles are examples, not real registered users.</p></section>
-<section class="page" id="page-profile"><div class="section-head"><div><h2>My Profile</h2><p>Set the name shown on your local demo posts.</p></div></div><div class="card" style="max-width:620px"><div class="club-top" style="margin-bottom:20px"><div class="avatar" id="profileAvatar" style="width:65px;height:65px;font-size:29px">🟦</div><div><h3 id="profileHeading">Player</h3><span class="muted">PlayVerse community profile</span></div></div><label class="label">Display name</label><input class="field" id="displayName" maxlength="24" placeholder="Choose a display name"><label class="label">Avatar emoji</label><select class="field" id="displayAvatar"><option>🟦</option><option>🟪</option><option>🟩</option><option>🐲</option><option>⚡</option><option>👾</option><option>🎮</option><option>🦊</option></select><button class="btn primary" id="saveProfile">Save profile</button></div><div class="card" style="max-width:620px;margin-top:15px"><h3>About this version</h3><p class="muted">This is a standalone front-end demo. Profile, clubs, and posts are stored only in this browser. It does not yet have accounts, moderation, cross-device syncing, or real-time messaging.</p></div></section>
-<div class="footer">PlayVerse Community · Made for players, by players · Unofficial community prototype</div>
-</div></main></div><div class="toast" id="toast" role="status"></div>
+</div>
+<p class="muted" style="margin-top:16px">These are example event ideas, not scheduled live events.</p>
+</section>
+
+<section class="page" id="page-members">
+<div class="section-head"><div><h2>Community members</h2><p>Meet players in this demo community.</p></div></div>
+<div class="card" id="memberList"></div>
+<p class="muted">Demo profiles are examples, not real registered users.</p>
+</section>
+
+<section class="page" id="page-profile">
+<div class="section-head"><div><h2>My Profile</h2><p>Set the name shown on your local demo posts.</p></div></div>
+<div class="card" style="max-width:620px">
+<div class="club-top" style="margin-bottom:20px"><div class="avatar" id="profileAvatar" style="width:65px;height:65px;font-size:29px">🟦</div><div><h3 id="profileHeading">Player</h3><span class="muted">PlayerCrossHub community profile</span></div></div>
+<label class="label">Display name</label><input class="field" id="displayName" maxlength="24" placeholder="Choose a display name">
+<label class="label">Avatar emoji</label>
+<select class="field" id="displayAvatar"><option>🟦</option><option>🟪</option><option>🟩</option><option>🐲</option><option>⚡</option><option>👾</option><option>🎮</option><option>🦊</option></select>
+<button class="btn primary" id="saveProfile">Save profile</button>
+</div>
+<div class="card" style="max-width:620px;margin-top:15px"><h3>About this version</h3><p class="muted">This is a standalone front-end demo. Profile, clubs, and posts are stored only in this browser. It does not yet have accounts, moderation, cross-device syncing, or real-time messaging.</p></div>
+</section>
+
+<div class="footer">PlayerCrossHub · Made for players, by players · Unofficial community prototype</div>
+</div>
+</main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
 <script>
 const starterClubs=[
-{id:1,name:"PlayVerse Official",topic:"All PlayVerse games",emoji:"🌌",desc:"The main community hub for PlayVerse players. Meet people, share ideas, and help the universe grow.",members:1,joined:true,featured:true},
+{id:1,name:"PlayerCrossHub Official",topic:"All PlayerCrossHub games",emoji:"🌌",desc:"The main community hub for PlayerCrossHub players. Meet people, share ideas, and help the universe grow.",members:1,joined:true,featured:true},
 {id:2,name:"PlayBlocks Builders",topic:"Building • Survival • Creative",emoji:"🧱",desc:"Share builds, trade tips, and team up to create awesome worlds.",members:24,joined:false,featured:true},
 {id:3,name:"Gaming Creators",topic:"YouTube • Videos • Thumbnails",emoji:"🎬",desc:"A friendly place for gaming creators to share projects and help each other improve.",members:18,joined:false,featured:true},
 {id:4,name:"PvP Arena",topic:"PvP • Challenges",emoji:"⚔️",desc:"Find opponents, organize friendly battles, and share your best plays.",members:31,joined:false,featured:false},
 {id:5,name:"Roblox Players",topic:"Roblox • Friends",emoji:"🎮",desc:"Talk about Roblox experiences, avatar ideas, and community events.",members:42,joined:false,featured:false},
 {id:6,name:"Parkour Club",topic:"Parkour • Speedruns",emoji:"🏃",desc:"Trade routes, celebrate records, and challenge yourself to new courses.",members:16,joined:false,featured:false}
 ];
-const starterPosts=[{id:1,name:"PlayVerse Team",avatar:"🌌",time:"Welcome post",text:"Welcome to the PlayVerse Community! ✨ Introduce yourself, tell us what you play, and share what you'd love to see next.",likes:4,liked:false}];
+
+const starterPosts=[{id:1,name:"PlayerCrossHub Team",avatar:"🌌",time:"Welcome post",text:"Welcome to PlayerCrossHub! ✨ Introduce yourself, tell us what you play, and share what you'd love to see next.",likes:4,liked:false}];
+
 let clubs=load("pvclubs",starterClubs),posts=load("pvposts",starterPosts),profile=load("pvprofile",{name:"Player",avatar:"🟦"}),rsvps=load("pvrsvps",[]);
+
 function load(k,f){try{let v=localStorage.getItem(k);return v?JSON.parse(v):structuredClone(f)}catch(e){return f}}
-function save(){localStorage.setItem("pvclubs",JSON.stringify(clubs));localStorage.setItem("pvposts",JSON.stringify(posts));localStorage.setItem("pvprofile",JSON.stringify(profile));localStorage.setItem("pvrsvps",JSON.stringify(rsvps))}
+
+function save(){
+localStorage.setItem("pvclubs",JSON.stringify(clubs));
+localStorage.setItem("pvposts",JSON.stringify(posts));
+localStorage.setItem("pvprofile",JSON.stringify(profile));
+localStorage.setItem("pvrsvps",JSON.stringify(rsvps));
+}
+
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function toast(s){let t=document.getElementById("toast");t.textContent=s;t.style.display="block";clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display="none",2400)}
-function clubCard(c){return `<article class="card"><div class="club-top"><div class="club-icon">${esc(c.emoji)}</div><div style="min-width:0"><h3>${esc(c.name)}</h3><div class="muted" style="font-size:12px">${esc(c.topic)}</div></div></div><p>${esc(c.desc)}</p><div class="card-foot"><span>♙ ${c.members} ${c.members===1?'member':'members'}</span><button class="btn ${c.joined?'':'primary'}" data-join="${c.id}">${c.joined?'Joined ✓':'Join club'}</button></div></article>`}
-function postCard(p){return `<div class="post"><div class="avatar">${esc(p.avatar||'🎮')}</div><div class="post-body"><div class="post-meta"><strong>${esc(p.name)}</strong><span class="muted">· ${esc(p.time)}</span></div><p>${esc(p.text)}</p><div class="post-actions"><button class="btn" style="padding:4px 9px" data-like="${p.id}">${p.liked?'♥':'♡'} ${p.likes}</button><span>Community post</span></div></div></div>`}
-function render(){document.getElementById("clubCount").textContent=clubs.length;document.getElementById("postCount").textContent=posts.length;document.getElementById("featuredClubs").innerHTML=clubs.filter(c=>c.featured).slice(0,3).map(clubCard).join("");document.getElementById("allClubs").innerHTML=clubs.map(clubCard).join("");document.getElementById("discoverClubs").innerHTML=clubs.map(clubCard).join("");document.getElementById("homePosts").innerHTML=posts.slice(0,3).map(postCard).join("")||'<div class="empty">No posts yet. Be the first to share something!</div>';document.getElementById("allPosts").innerHTML=posts.map(postCard).join("")||'<div class="empty">No posts yet. Write the first one above.</div>';document.getElementById("discoverPosts").innerHTML=posts.slice(0,5).map(postCard).join("");document.getElementById("topName").textContent=profile.name;document.getElementById("topAvatar").textContent=profile.avatar;document.getElementById("profileAvatar").textContent=profile.avatar;document.getElementById("profileHeading").textContent=profile.name;document.getElementById("displayName").value=profile.name;document.getElementById("displayAvatar").value=profile.avatar;document.getElementById("memberList").innerHTML=[{name:profile.name,avatar:profile.avatar,role:"You · Local demo profile"},{name:"PixelPilot",avatar:"🟪",role:"Example member"},{name:"BuilderNova",avatar:"🟩",role:"Example member"},{name:"StarRunner",avatar:"⚡",role:"Example member"},{name:"BlockFox",avatar:"🦊",role:"Example member"}].map(m=>`<div class="members"><div class="avatar">${m.avatar}</div><div><strong>${esc(m.name)}</strong><div class="muted">${esc(m.role)}</div></div></div>`).join("");save()}
-function go(page){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));let el=document.getElementById("page-"+page);if(el)el.classList.add("active");document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));window.scrollTo({top:0,behavior:"smooth"})}
-document.getElementById("nav").addEventListener("click",e=>{let b=e.target.closest("[data-page]");if(b)go(b.dataset.page)});
-document.addEventListener("click",e=>{let g=e.target.closest("[data-go]");if(g)go(g.dataset.go);let j=e.target.closest("[data-join]");if(j){let c=clubs.find(x=>x.id===+j.dataset.join);if(c){c.joined=!c.joined;c.members=Math.max(0,c.members+(c.joined?1:-1));render();toast(c.joined?"Joined "+c.name:"Left "+c.name)}}let l=e.target.closest("[data-like]");if(l){let p=posts.find(x=>x.id===+l.dataset.like);if(p){p.likes+=p.liked?-1:1;p.liked=!p.liked;render()}}let r=e.target.closest("[data-rsvp]");if(r){let n=r.dataset.rsvp;if(rsvps.includes(n)){rsvps=rsvps.filter(x=>x!==n);r.textContent="I'm interested";toast("Interest removed")}else{rsvps.push(n);r.textContent="Interested ✓";toast("Added to your interests (local demo)")};save()}});
-document.getElementById("createClubBtn").onclick=()=>{let f=document.getElementById("clubForm");f.style.display=f.style.display==="none"?"block":"none"};
+
+function toast(s){
+let t=document.getElementById("toast");
+t.textContent=s;
+t.style.display="block";
+clearTimeout(window.toastTimer);
+window.toastTimer=setTimeout(()=>t.style.display="none",2400);
+}
+
+function clubCard(c){
+return `<article class="card"><div class="club-top"><div class="club-icon">${esc(c.emoji)}</div><div style="min-width:0"><h3>${esc(c.name)}</h3><div class="muted" style="font-size:12px">${esc(c.topic)}</div></div></div><p>${esc(c.desc)}</p><div class="card-foot"><span>♙ ${c.members} ${c.members===1?'member':'members'}</span><button class="btn ${c.joined?'':'primary'}" data-join="${c.id}">${c.joined?'Joined ✓':'Join club'}</button></div></article>`;
+}
+
+function postCard(p){
+return `<div class="post"><div class="avatar">${esc(p.avatar||'🎮')}</div><div class="post-body"><div class="post-meta"><strong>${esc(p.name)}</strong><span class="muted">· ${esc(p.time)}</span></div><p>${esc(p.text)}</p><div class="post-actions"><button class="btn" style="padding:4px 9px" data-like="${p.id}">${p.liked?'♥':'♡'} ${p.likes}</button><span>Community post</span></div></div></div>`;
+}
+
+function render(){
+document.getElementById("clubCount").textContent=clubs.length;
+document.getElementById("postCount").textContent=posts.length;
+document.getElementById("featuredClubs").innerHTML=clubs.filter(c=>c.featured).slice(0,3).map(clubCard).join("");
+document.getElementById("allClubs").innerHTML=clubs.map(clubCard).join("");
+document.getElementById("discoverClubs").innerHTML=clubs.map(clubCard).join("");
+document.getElementById("homePosts").innerHTML=posts.slice(0,3).map(postCard).join("")||'<div class="empty">No posts yet. Be the first to share something!</div>';
+document.getElementById("allPosts").innerHTML=posts.map(postCard).join("")||'<div class="empty">No posts yet. Write the first one above.</div>';
+document.getElementById("discoverPosts").innerHTML=posts.slice(0,5).map(postCard).join("");
+document.getElementById("topName").textContent=profile.name;
+document.getElementById("topAvatar").textContent=profile.avatar;
+document.getElementById("profileAvatar").textContent=profile.avatar;
+document.getElementById("profileHeading").textContent=profile.name;
+document.getElementById("displayName").value=profile.name;
+document.getElementById("displayAvatar").value=profile.avatar;
+document.getElementById("memberList").innerHTML=[{name:profile.name,avatar:profile.avatar,role:"You · Local demo profile"},{name:"PixelPilot",avatar:"🟪",role:"Example member"},{name:"BuilderNova",avatar:"🟩",role:"Example member"},{name:"StarRunner",avatar:"⚡",role:"Example member"},{name:"BlockFox",avatar:"🦊",role:"Example member"}].map(m=>`<div class="members"><div class="avatar">${m.avatar}</div><div><strong>${esc(m.name)}</strong><div class="muted">${esc(m.role)}</div></div></div>`).join("");
+save();
+}
+
+function go(page){
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+let el=document.getElementById("page-"+page);
+if(el)el.classList.add("active");
+document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+document.getElementById("nav").addEventListener("click",e=>{
+let b=e.target.closest("[data-page]");
+if(b)go(b.dataset.page);
+});
+
+document.addEventListener("click",e=>{
+let g=e.target.closest("[data-go]");
+if(g)go(g.dataset.go);
+
+let j=e.target.closest("[data-join]");
+if(j){
+let c=clubs.find(x=>x.id===+j.dataset.join);
+if(c){
+c.joined=!c.joined;
+c.members=Math.max(0,c.members+(c.joined?1:-1));
+render();
+toast(c.joined?"Joined "+c.name:"Left "+c.name);
+}
+}
+
+let l=e.target.closest("[data-like]");
+if(l){
+let p=posts.find(x=>x.id===+l.dataset.like);
+if(p){
+p.likes+=p.liked?-1:1;
+p.liked=!p.liked;
+render();
+}
+}
+
+let r=e.target.closest("[data-rsvp]");
+if(r){
+let n=r.dataset.rsvp;
+if(rsvps.includes(n)){
+rsvps=rsvps.filter(x=>x!==n);
+r.textContent="I'm interested";
+toast("Interest removed");
+}else{
+rsvps.push(n);
+r.textContent="Interested ✓";
+toast("Added to your interests (local demo)");
+}
+save();
+}
+});
+
+document.getElementById("createClubBtn").onclick=()=>{
+let f=document.getElementById("clubForm");
+f.style.display=f.style.display==="none"?"block":"none";
+};
+
 document.getElementById("cancelClub").onclick=()=>document.getElementById("clubForm").style.display="none";
-document.getElementById("saveClub").onclick=()=>{let name=document.getElementById("clubName").value.trim(),topic=document.getElementById("clubTopic").value.trim(),desc=document.getElementById("clubDescription").value.trim(),emoji=document.getElementById("clubEmoji").value.trim()||"🎮";if(!name||!topic||!desc){toast("Fill in the club name, topic, and description.");return}clubs.unshift({id:Date.now(),name,topic,desc,emoji,members:1,joined:true,featured:false});["clubName","clubTopic","clubDescription"].forEach(id=>document.getElementById(id).value="");document.getElementById("clubForm").style.display="none";render();toast("Club created in this browser!");};
-document.getElementById("publishPost").onclick=()=>{let field=document.getElementById("postText"),txt=field.value.trim();if(!txt){toast("Write a message first.");return}posts.unshift({id:Date.now(),name:profile.name,avatar:profile.avatar,time:"Just now",text:txt,likes:0,liked:false});field.value="";document.getElementById("charCount").textContent="0 / 500";render();toast("Post published locally!");};
-document.getElementById("postText").addEventListener("input",e=>document.getElementById("charCount").textContent=e.target.value.length+" / 500");
-document.getElementById("saveProfile").onclick=()=>{profile.name=document.getElementById("displayName").value.trim()||"Player";profile.avatar=document.getElementById("displayAvatar").value;render();renderChat();toast("Profile saved in this browser.")};
-document.getElementById("search").addEventListener("input",e=>{let q=e.target.value.toLowerCase().trim();if(!q)return;go("discover");document.getElementById("discoverClubs").innerHTML=clubs.filter(c=>(c.name+" "+c.topic+" "+c.desc).toLowerCase().includes(q)).map(clubCard).join("")||'<div class="empty">No matching clubs. Try another search.</div>';document.getElementById("discoverPosts").innerHTML=posts.filter(p=>(p.name+" "+p.text).toLowerCase().includes(q)).map(postCard).join("")||'<div class="empty">No matching posts.</div>'});
+
+document.getElementById("saveClub").onclick=()=>{
+let name=document.getElementById("clubName").value.trim();
+let topic=document.getElementById("clubTopic").value.trim();
+let desc=document.getElementById("clubDescription").value.trim();
+let emoji=document.getElementById("clubEmoji").value.trim()||"🎮";
+if(!name||!topic||!desc){toast("Fill in the club name, topic, and description.");return}
+clubs.unshift({id:Date.now(),name,topic,desc,emoji,members:1,joined:true,featured:false});
+["clubName","clubTopic","clubDescription"].forEach(id=>document.getElementById(id).value="");
+document.getElementById("clubForm").style.display="none";
+render();
+toast("Club created in this browser!");
+};
+
+document.getElementById("publishPost").onclick=()=>{
+let field=document.getElementById("postText");
+let txt=field.value.trim();
+if(!txt){toast("Write a message first.");return}
+posts.unshift({id:Date.now(),name:profile.name,avatar:profile.avatar,time:"Just now",text:txt,likes:0,liked:false});
+field.value="";
+document.getElementById("charCount").textContent="0 / 500";
+render();
+toast("Post published locally!");
+};
+
+document.getElementById("postText").addEventListener("input",e=>{
+document.getElementById("charCount").textContent=e.target.value.length+" / 500";
+});
+
+document.getElementById("saveProfile").onclick=()=>{
+profile.name=document.getElementById("displayName").value.trim()||"Player";
+profile.avatar=document.getElementById("displayAvatar").value;
+render();
+renderChat();
+toast("Profile saved in this browser.");
+};
+
+document.getElementById("search").addEventListener("input",e=>{
+let q=e.target.value.toLowerCase().trim();
+if(!q)return;
+go("discover");
+document.getElementById("discoverClubs").innerHTML=clubs.filter(c=>(c.name+" "+c.topic+" "+c.desc).toLowerCase().includes(q)).map(clubCard).join("")||'<div class="empty">No matching clubs. Try another search.</div>';
+document.getElementById("discoverPosts").innerHTML=posts.filter(p=>(p.name+" "+p.text).toLowerCase().includes(q)).map(postCard).join("")||'<div class="empty">No matching posts.</div>';
+});
 
 const channelInfo={
-welcome:{title:"✦・welcome",desc:"Start here and meet the community",messages:[{name:"PlayVerse Team",avatar:"🌌",text:"Welcome to the PlayVerse Hub! ✨ Say hello and check out the channels."},{name:"PlayVerse Team",avatar:"🌌",text:"Be kind, keep chat friendly, and share your awesome builds and games."}]},
-announcements:{title:"📣・announcements",desc:"Community updates",messages:[{name:"PlayVerse Team",avatar:"🌌",text:"This channel is for important community updates. Example announcement: the PlayVerse Community prototype is open for testing!"}]},
+welcome:{title:"✦・welcome",desc:"Start here and meet the community",messages:[{name:"PlayerCrossHub Team",avatar:"🌌",text:"Welcome to the PlayerCrossHub Hub! ✨ Say hello and check out the channels."},{name:"PlayerCrossHub Team",avatar:"🌌",text:"Be kind, keep chat friendly, and share your awesome builds and games."}]},
+announcements:{title:"📣・announcements",desc:"Community updates",messages:[{name:"PlayerCrossHub Team",avatar:"🌌",text:"This channel is for important community updates. Example announcement: the PlayerCrossHub Community prototype is open for testing!"}]},
 general:{title:"#・general",desc:"Chat about anything gaming-related",messages:[{name:"PixelPilot",avatar:"🟪",text:"Hey everyone! What are you playing today?"},{name:"BuilderNova",avatar:"🟩",text:"I'm working on a new build. 🧱"}]},
 gaming:{title:"🎮・gaming",desc:"Talk about games and find teammates",messages:[{name:"StarRunner",avatar:"⚡",text:"Drop your favourite game recommendations here!"}]},
 showcase:{title:"🖼️・showcase",desc:"Share creations and builds",messages:[{name:"BuilderNova",avatar:"🟩",text:"Use this channel to show off your builds, art, and game projects."}]},
 creators:{title:"🎥・creators",desc:"Videos, streams, and creator tips",messages:[{name:"PixelPilot",avatar:"🟪",text:"Share video ideas and creator tips here. Remember to be respectful!"}]}
 };
+
 let currentChannel="welcome";
 let chatData=load("pvchatdata",channelInfo);
-function renderChat(){let c=chatData[currentChannel]||channelInfo[currentChannel];document.getElementById("chatChannelTitle").textContent=c.title;document.getElementById("chatChannelDesc").textContent=c.desc;document.getElementById("chatInput").placeholder="Message "+c.title;document.getElementById("chatSelf").textContent=profile.avatar+" "+profile.name;document.getElementById("chatMessages").innerHTML=c.messages.map(m=>`<div class="chat-message"><div class="avatar">${esc(m.avatar||"🎮")}</div><div><div class="post-meta"><strong>${esc(m.name)}</strong><span class="muted">Today</span></div><p>${esc(m.text)}</p></div></div>`).join("");document.querySelectorAll("[data-channel]").forEach(b=>b.classList.toggle("selected",b.dataset.channel===currentChannel));let box=document.getElementById("chatMessages");box.scrollTop=box.scrollHeight;localStorage.setItem("pvchatdata",JSON.stringify(chatData))}
-document.querySelectorAll("[data-channel]").forEach(b=>b.addEventListener("click",()=>{currentChannel=b.dataset.channel;renderChat()}));
-document.querySelectorAll("[data-voice]").forEach(b=>b.addEventListener("click",()=>toast(b.dataset.voice+" voice channel is a visual demo only.")));
-function sendChat(){let input=document.getElementById("chatInput"),txt=input.value.trim();if(!txt)return;chatData[currentChannel].messages.push({name:profile.name,avatar:profile.avatar,text:txt});input.value="";renderChat()}
-document.getElementById("sendChat").addEventListener("click",sendChat);
-document.getElementById("chatInput").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();sendChat()}});
 
-render();renderChat();
+function renderChat(){
+let c=chatData[currentChannel]||channelInfo[currentChannel];
+document.getElementById("chatChannelTitle").textContent=c.title;
+document.getElementById("chatChannelDesc").textContent=c.desc;
+document.getElementById("chatInput").placeholder="Message "+c.title;
+document.getElementById("chatSelf").textContent=profile.avatar+" "+profile.name;
+document.getElementById("chatMessages").innerHTML=c.messages.map(m=>`<div class="chat-message"><div class="avatar">${esc(m.avatar||"🎮")}</div><div><div class="post-meta"><strong>${esc(m.name)}</strong><span class="muted">Today</span></div><p>${esc(m.text)}</p></div></div>`).join("");
+document.querySelectorAll("[data-channel]").forEach(b=>b.classList.toggle("selected",b.dataset.channel===currentChannel));
+let box=document.getElementById("chatMessages");
+box.scrollTop=box.scrollHeight;
+localStorage.setItem("pvchatdata",JSON.stringify(chatData));
+}
+
+document.querySelectorAll("[data-channel]").forEach(b=>b.addEventListener("click",()=>{
+currentChannel=b.dataset.channel;
+renderChat();
+}));
+
+document.querySelectorAll("[data-voice]").forEach(b=>b.addEventListener("click",()=>toast(b.dataset.voice+" voice channel is a visual demo only.")));
+
+function sendChat(){
+let input=document.getElementById("chatInput");
+let txt=input.value.trim();
+if(!txt)return;
+chatData[currentChannel].messages.push({name:profile.name,avatar:profile.avatar,text:txt});
+input.value="";
+renderChat();
+}
+
+document.getElementById("sendChat").addEventListener("click",sendChat);
+document.getElementById("chatInput").addEventListener("keydown",e=>{
+if(e.key==="Enter"){e.preventDefault();sendChat()}
+});
+
+render();
+renderChat();
 </script>
 
 <script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js")
-      .catch((error) => {
-        console.error("PlayHub service worker registration failed:", error);
-      });
-  });
+if("serviceWorker" in navigator){
+window.addEventListener("load",()=>{
+navigator.serviceWorker.register("./sw.js")
+.catch((error)=>{
+console.error("PlayerCrossHub service worker registration failed:",error);
+});
+});
 }
 </script>
 </body>
